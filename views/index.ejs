@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Data Mahasiswa</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Form Tambah Mahasiswa</h2>
+    <form action="/tambah" method="POST">
+        <input type="text" name="nim" placeholder="NIM" required>
+        <input type="text" name="nama" placeholder="Nama Mahasiswa" required>
+        <input type="text" name="jurusan" placeholder="Jurusan" required>
+        <button type="submit">Tambah Data</button>
+    </form>
+
+    <h2>Daftar Mahasiswa</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jurusan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% mahasiswa.forEach(m => { %>
+                <tr>
+                    <td><%= m.id %></td>
+                    
+                    <!-- Form update membungkus satu baris ini -->
+                    <form action="/update/<%= m.id %>" method="POST">
+                        <td><input type="text" name="nim" value="<%= m.nim %>"></td>
+                        <td><input type="text" name="nama" value="<%= m.nama %>"></td>
+                        <td><input type="text" name="jurusan" value="<%= m.jurusan %>"></td>
+                        <td>
+                            <button type="submit">Simpan Edit</button>
+                    </form>
+                    
+                    <!-- Form delete dipisah khusus untuk tombol hapus -->
+                    <form action="/delete/<%= m.id %>" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
+                    </form>
+                        </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
