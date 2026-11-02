@@ -8,7 +8,7 @@ Aplikasi web sederhana untuk manajemen data mahasiswa menggunakan **Node.js**, *
 
 ## Tautan Proyek & Presentasi
 - **Repository GitHub**: (https://github.com/komangindraney-source/pemweb-tugas3-42530039)
-- **Video Walkthrough (YouTube)**: [MASUKKAN_LINK_YOUTUBE_ANDA_DISINI]
+- **Video Walkthrough (YouTube)**: [https://youtu.be/F-P_27xfnSs]
   
 ## Struktur Proyek
 - `app.js` - Berkas utama server Express.js dan routing CRUD.
